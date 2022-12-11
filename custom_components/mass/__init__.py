@@ -37,6 +37,9 @@ from .const import (
     CONF_SPOTIFY_ENABLED,
     CONF_SPOTIFY_PASSWORD,
     CONF_SPOTIFY_USERNAME,
+    CONF_TIDAL_PASSWORD,
+    CONF_TIDAL_USERNAME,
+    CONF_TIDAL_ENABLED,
     CONF_TUNEIN_ENABLED,
     CONF_TUNEIN_USERNAME,
     CONF_YTMUSIC_ENABLED,
@@ -143,6 +146,15 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
                 ProviderType.SPOTIFY,
                 username=conf.get(CONF_SPOTIFY_USERNAME),
                 password=conf.get(CONF_SPOTIFY_PASSWORD),
+            )
+        )
+
+    if conf.get(CONF_TIDAL_ENABLED):
+        providers.append(
+            MusicProviderConfig(
+                ProviderType.TIDAL,
+                username=conf.get(CONF_TIDAL_USERNAME),
+                password=conf.get(CONF_TIDAL_PASSWORD),
             )
         )
 

@@ -30,6 +30,9 @@ from .const import (
     CONF_SPOTIFY_ENABLED,
     CONF_SPOTIFY_PASSWORD,
     CONF_SPOTIFY_USERNAME,
+    CONF_TIDAL_ENABLED,
+    CONF_TIDAL_PASSWORD,
+    CONF_TIDAL_USERNAME,
     CONF_TUNEIN_ENABLED,
     CONF_TUNEIN_USERNAME,
     CONF_YTMUSIC_ENABLED,
@@ -52,6 +55,9 @@ DEFAULT_CONFIG = {
     CONF_SPOTIFY_ENABLED: False,
     CONF_SPOTIFY_USERNAME: "",
     CONF_SPOTIFY_PASSWORD: "",
+    CONF_TIDAL_ENABLED: False,
+    CONF_TIDAL_USERNAME: "",
+    CONF_TIDAL_PASSWORD: "",
     CONF_QOBUZ_ENABLED: False,
     CONF_QOBUZ_USERNAME: "",
     CONF_QOBUZ_PASSWORD: "",
@@ -145,6 +151,18 @@ def get_music_schema(cur_conf: dict):
             vol.Optional(
                 CONF_SPOTIFY_PASSWORD,
                 default=cur_conf[CONF_SPOTIFY_PASSWORD],
+            ): str,
+            vol.Required(
+                CONF_TIDAL_ENABLED,
+                default=cur_conf[CONF_TIDAL_ENABLED],
+            ): bool,
+            vol.Optional(
+                CONF_TIDAL_USERNAME,
+                default=cur_conf[CONF_TIDAL_USERNAME],
+            ): str,
+            vol.Optional(
+                CONF_TIDAL_PASSWORD,
+                default=cur_conf[CONF_TIDAL_PASSWORD],
             ): str,
             vol.Required(
                 CONF_QOBUZ_ENABLED, default=cur_conf[CONF_QOBUZ_ENABLED]

@@ -27,8 +27,8 @@ Music Assistant consists of multiple building blocks:
 ### Features
 
 - Supports multiple music sources through a provider implementation.
-- Currently implemented music providers are Spotify, Qobuz, YouTube Music, Tune-In Radio and local filesystem.
-- More music providers can be easily added, soon available: Tidal and Deezer.
+- Currently implemented music providers are Spotify, Todal, Qobuz, YouTube Music, Tune-In Radio and local filesystem.
+- More music providers can be easily added, soon available: Deezer.
 - Auto matches music on different providers (track linking).
 - Fetches metadata for extended artist information.
 - Keeps track of the entire music library in a compact database
